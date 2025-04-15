@@ -5,14 +5,14 @@ function App() {
   const menuItems = ["Home", "Our Products", "Blog", "Contact", "StyleGuide"];
   const [isMenuOpen, SetIsMenuOpen] = useState(false);
   const [isClosing, SetIsClosing] = useState(false);
+  // hàm xử lí đóng hoặc mở menu mobile
   const toggleMenu = () => {
     if (isMenuOpen) {
-      // Đang mở → thì chuyển sang đóng
       SetIsClosing(true);
       setTimeout(() => {
         SetIsMenuOpen(false);
         SetIsClosing(false);
-      }, 400); // Phải khớp với thời gian animation slide-up
+      }, 400);
     } else {
       SetIsMenuOpen(true);
     }
@@ -99,10 +99,38 @@ function App() {
                 </div>
               </div>
             </div>
-            <div className="story">Story</div>
+            <div className="story">
+              <div className="w-full h-full flex flex-col justify-center items-center ">
+                <div className="px-3 md:px-32 lg:px-64 xl:px-96 text-3xl leading-10 py-5 mt-20 text-center">Even the all-powerful Pointing has no control about the blind texts.</div>
+                <div className="text-base leading-7 text-center text-gray-500 px-12 mb-6">It is a paradisematic country, in which roasted parts of sentences fly into your mouth.<br /> Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</div>
+                <div className=""><a className=' text-coffee-400 hover:text-coffee-600 relative after:absolute after:-bottom-2 after:left-0 after:bg-coffee-50 hover:after:bg-coffee-200 after:h-0.5 after:w-full after:transition-all after:ease-in-out after:duration-400' href="#">Read the full Story</a></div>
+              </div>
+            </div>
+
+            <div className="ct-subheadline">
+              <div className="ct-subheadline-deco-line"></div>
+              <div className="ct-subheadline-label">Featured Mugs</div>
+              <div className="ct-subheadline-deco-line"></div>
+            </div>
+
             <div className="featured-mugs">Featured Mugs</div>
+            <div className="ct-subheadline">
+              <div className="ct-subheadline-deco-line"></div>
+              <div className="ct-subheadline-label">more products</div>
+              <div className="ct-subheadline-deco-line"></div>
+            </div>
             <div className="more-product">Product</div>
+            <div className="ct-subheadline">
+              <div className="ct-subheadline-deco-line"></div>
+              <div className="ct-subheadline-label">Buy 2 mugs and get a coffee magazine free</div>
+              <div className="ct-subheadline-deco-line"></div>
+            </div>
             <div className="coffee-magazine">Coffee Magazine</div>
+            <div className="ct-subheadline">
+              <div className="ct-subheadline-deco-line"></div>
+              <div className="ct-subheadline-label">Behind the mugs, lifestyle stories</div>
+              <div className="ct-subheadline-deco-line"></div>
+            </div>
             <div className="lifestyle-story">LifeStyle Story</div>
             <div className="subscribe-us">Subscribe Us</div>
           </main>
