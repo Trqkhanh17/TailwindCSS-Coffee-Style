@@ -12,6 +12,9 @@ export default {
       fontFamily:{
         Karla:["Karla", "sans-serif"]
       },
+      backgroundImage: {
+        'slider-bg': "url('./assets/slider-bg.jpg')",
+      },
     },
   },
   plugins: [],

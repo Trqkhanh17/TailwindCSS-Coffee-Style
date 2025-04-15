@@ -25,6 +25,7 @@ function App() {
   useEffect(() => {
     if (headerRef.current) {
       setHeaderHeight(headerRef.current.offsetHeight);
+
     }
   }, []);
 
@@ -74,7 +75,7 @@ function App() {
             <div
               className={`absolute lg:hidden left-0 w-full bg-white z-50 flex flex-col items-center gap-6 uppercase text-sm text-gray-700 font-medium ${isClosing ? 'animate-slide-up' : 'animate-slide-down'
                 }`}
-              style={{ top: `${headerHeight}px` }}
+              style={{ top: `${headerHeight - 21}px` }}
             >
               {menuItems.map((item, index) => (
                 <a href="#" key={index} className="ct-top-menu-item">
@@ -85,8 +86,19 @@ function App() {
           )}
 
           {/* Main Content */}
-          <main className="min-h-[800px] pt-8 text-center bg-gray-600">
-            <div className="slide">Slider</div>
+          <main className="">
+            <div className="slide h-[530px] bg-[url('./assets/slider-bg.jpg')] bg-cover bg-no-repeat bg-bottom">
+              <div className="w-full h-full flex justify-center items-center bg-gray-900 bg-opacity-20">
+                <div className="mx-16 text-white text-center">
+                  <div className="uppercase mb-6 text-sm">Best place to buy design</div>
+                  <div className="font-medium text-5xl mb-6">Coffee Mugs</div>
+                  <div className="mb-6 font-medium text-lg">The most versatile furniture syftem ever created. Designed to fit your life, made to move and grow.</div>
+                  <div className="flex justify-center items-center">
+                    <div className="uppercase bg-white w-max text-gray-900 tracking-wider py-4 px-6 text-sm font-medium cursor-pointer hover:bg-opacity-95">explore our products</div>
+                  </div>
+                </div>
+              </div>
+            </div>
             <div className="story">Story</div>
             <div className="featured-mugs">Featured Mugs</div>
             <div className="more-product">Product</div>
