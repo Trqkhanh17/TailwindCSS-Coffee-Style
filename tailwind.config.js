@@ -20,6 +20,9 @@ export default {
       backgroundImage: {
         'slider-bg': "url('./assets/slider-bg.jpg')",
       },
+      screens:{
+        screen700:"700px"
+      }
     },
   },
   plugins: [],
