@@ -21,7 +21,8 @@ export default {
         'slider-bg': "url('./assets/slider-bg.jpg')",
       },
       screens:{
-        screen700:"700px"
+        screen783:"783px",
+        screen500:"500px",
       }
     },
   },
