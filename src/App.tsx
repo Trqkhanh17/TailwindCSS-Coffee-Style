@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import Subheadline from './component/subheadline';
-
+import MoreProduct from './component/moreProduct';
+import FeaturedMugs from './component/featuredMugs';
 function App() {
   const menuItems = ["Home", "Our Products", "Blog", "Contact", "StyleGuide"];
   const [isMenuOpen, SetIsMenuOpen] = useState(false);
@@ -18,69 +19,7 @@ function App() {
       SetIsMenuOpen(true);
     }
   };
-  interface productItem {
-    src: string
-    name: string,
-    price: number,
-    sale: null | number
-  }
-  const moreProducs: productItem[] = [
-    {
-      src: './assets/more_product_1.jpg',
-      name: "Golden Designers Mug",
-      price: 37.00,
-      sale: 25.00
-    },
-    {
-      src: './assets/more_product_2.jpg',
-      name: "Black Tea Cup",
-      price: 29.00,
-      sale: 19.00
-    },
-    {
-      src: './assets/more_product_3.jpg',
-      name: "B&W Essentials Mug",
-      price: 19.00,
-      sale: null
-    },
-    {
-      src: './assets/more_product_4.jpg',
-      name: "Winter Style Mug",
-      price: 25.00,
-      sale: null
-    },
 
-    {
-      src: './assets/more_product_5.jpg',
-      name: "Ceramic Tea",
-      price: 46.00,
-      sale: null
-    },
-    {
-      src: './assets/more_product_6.jpg',
-      name: "No Handle Bar Cup",
-      price: 34.00,
-      sale: null
-    },
-    {
-      src: './assets/more_product_7.jpg',
-      name: "Espresso Cup by Mugs.co",
-      price: 37.00,
-      sale: null
-    },
-    {
-      src: './assets/more_product_8.jpg',
-      name: "Pink Premium Ceramic",
-      price: 99.00,
-      sale: null
-    },
-    {
-      src: './assets/more_product_9.jpg',
-      name: "Summer Designer Cup",
-      price: 29.00,
-      sale: null
-    },
-  ]
   const headerRef = useRef<HTMLDivElement | null>(null);
   const [headerHeight, setHeaderHeight] = useState(0);
 
@@ -89,6 +28,7 @@ function App() {
     if (headerRef.current) {
       setHeaderHeight(headerRef.current.offsetHeight);
     }
+
   }, []);
 
   return (
@@ -170,82 +110,11 @@ function App() {
             </div>
 
             <Subheadline title={"Featured Mugs"} />
-            <div className="featured-mugs w-[100%] xl:w-[65%] mx-auto">
-              <div className="grid screen783:grid-cols-2 grid-cols-1 gap-4">
-                <div className="ct-product-card">
-                  <div className="h-[540px] bg-[url('./assets/featured_mugs_product_cart_2.jpg')] bg-cover bg-no-repeat bg-center">
-                    <a href="#">
-                      <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
-                        <div className="absolute bottom-7 w-[90%] h-[10%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">
-                          <div className=''>explore mug</div>
-                        </div>
-                        <div className="bg-white text-coffee-600 px-5 py-3 absolute top-3 right-3 text-center font-bold">On Sale.</div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="text-center mt-10 ">
-                    <div className="text-gray-900 text-2xl">Pink Premium Ceramic</div>
-                    <div className="text-gray-500 mt-3 font-medium">$ 99.00 USD</div>
-                  </div>
-                </div>
-
-                <div className="ct-product-card">
-                  <div className="h-[540px] bg-[url('./assets/featured_mugs_product_cart_1.jpg')] bg-cover bg-no-repeat bg-center">
-                    <a href="#">
-                      <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
-                        <div className="absolute bottom-7 w-[90%] h-[10%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">
-                          <div className=''>explore mug</div>
-                        </div>
-                        <div className="bg-white text-coffee-600 px-5 py-3 absolute top-3 right-3 text-center font-bold">On Sale.</div>
-                      </div>
-                    </a>
-                  </div>
-                  <div className="mt-10">
-                    <div className="text-gray-900 text-2xl text-center">Golden Designers Mug</div>
-                    <div className="flex justify-center items-center mt-2">
-                      <div className="mr-2 text-coffee-600 text-xl">$ 50.00</div>
-                      <div className="text-gray-500 mt-1 font-medium line-through opacity-70">$ 69.00 USD</div>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
+            <FeaturedMugs />
 
             <Subheadline title={"more products"} />
 
-            <div className="more-product w-[90%] xl:w-[65%] mx-auto">
-              <div className="grid screen783:grid-cols-3 grid-cols-1 gap-4 gap-y-10">
-                {moreProducs.map((item, index) => (
-                  <div className="ct-product-card" key={index}>
-                    <div className={`h-[400px] bg-[url('${item.src}')] bg-cover bg-no-repeat bg-center`}>
-                      <a href="#">
-                        <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
-                          <div className="absolute bottom-7 w-[90%] h-[10%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">
-                            <div className=''>explore mug</div>
-                          </div>
-                          {item.sale && (
-                            <div className="bg-white text-coffee-600 px-5 py-3 absolute top-3 right-3 text-center font-bold">On Sale.</div>
-                          )}
-                        </div>
-                      </a>
-                    </div>
-                    <div className="text-center mt-5">
-                      <div className="text-gray-900 text-2xl text-center">{item.name}</div>
-                      {item.sale ? (
-                        <div className="flex justify-center items-center mt-2">
-                          <div className="mr-2 text-coffee-600 text-xl">$ {item.sale}.00</div>
-                          <div className="text-gray-500 mt-1 font-medium line-through opacity-70">$ {item.price} USD</div>
-                        </div>
-                      ) : (
-                        <div className="text-gray-500 mt-3 font-medium">$ {item.price}.00 USD</div>
-                      )
-                      }
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
+            <MoreProduct />
 
             <Subheadline title={"Buy 2 mugs and get a coffee magazine free"} />
 

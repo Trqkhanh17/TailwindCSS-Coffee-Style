@@ -1,6 +1,6 @@
 
 type Props = {
-    title: String
+    title: string
 }
 const Subheadline = ({ title }: Props) => {
     return (
