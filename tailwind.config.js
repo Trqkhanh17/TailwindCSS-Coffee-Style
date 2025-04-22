@@ -23,6 +23,7 @@ export default {
       screens:{
         screen783:"783px",
         screen500:"500px",
+        "sm790":{"max":"790px"}
       }
     },
   },

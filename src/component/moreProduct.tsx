@@ -74,7 +74,7 @@ const MoreProduct = () => {
         },
     ]
     return (
-        <div className="more-product w-[90%] xl:w-[65%] mx-auto">
+        <div className="more-product w-[100%] xl:w-[65%] mx-auto">
             <div className="grid screen783:grid-cols-3 grid-cols-1 gap-4 gap-y-10">
                 {moreProducs.map((item, index) => (
                     <div className="ct-product-card" key={index}>
@@ -108,4 +108,4 @@ const MoreProduct = () => {
         </div>
     )
 }
-export default MoreProduct;
+export default MoreProduct
