@@ -12,6 +12,9 @@ export default {
           200:"#C89F94",
           400:"#A25F4B",
           600:"#744838"
+        },
+        "bordercolor":{
+          "inputSubscribe":"#2f303e"
         }
       },
       fontFamily:{
@@ -23,7 +26,11 @@ export default {
       screens:{
         screen783:"783px",
         screen500:"500px",
-        "sm790":{"max":"790px"}
+        "screen554":{"max":"545px"},
+        "screen900":{"max":"900px"},
+        "sm790":{"max":"790px"},
+        "xl1280":{"max":"1280px"},
+        "screen700":{"max":"700px"}
       }
     },
   },
