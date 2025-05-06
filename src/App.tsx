@@ -6,9 +6,11 @@ import FeaturedMugs from './component/featuredMugs';
 
 function App() {
   const menuItems = ["Home", "Our Products", "Blog", "Contact", "StyleGuide"];
+
   const [isMenuOpen, SetIsMenuOpen] = useState(false);
+
   const [isClosing, SetIsClosing] = useState(false);
-  // hàm xử lí đóng hoặc mở menu mobile
+
   const toggleMenu = () => {
     if (isMenuOpen) {
       SetIsClosing(true);
@@ -22,6 +24,7 @@ function App() {
   };
 
   const headerRef = useRef<HTMLDivElement | null>(null);
+
   const [headerHeight, setHeaderHeight] = useState(0);
 
   useEffect(() => {
@@ -142,8 +145,60 @@ function App() {
             <div className="ct-parallax bg-[url('./assets/Parallax.jpg')] bg-cover bg-center w-[100vw] left-[calc(-50vw+50%)] relative h-96 bg-fixed"></div>
 
             <Subheadline title={"Behind the mugs, lifestyle stories"} />
-            <div className="lifestyle-story">LifeStyle Story</div>
-            <div className="subscribe-us">Subscribe Us</div>
+            <div className="lifestyle-story xl:w-[65%] mx-auto mb-20 w-[100%]">
+              <div className="grid screen783:grid-cols-3 gap-5 xl1280:w-[65%] xl1280:mx-auto screen700:w-full">
+                <div className="flex flex-col justify-start gap-4">
+                  <div className="group cursor-pointer relative bg-[url('./assets/LifestyleStories1.jpg')] h-[200px] screen700:h-[300px] w-full bg-cover bg-center flex justify-center items-center hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
+                    <div className="absolute bottom-7 w-[90%] h-[15%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:-translate-y-0 transition-all duration-300 ease-in-out flex">
+                      <div className='text-center'>explore mug</div>
+                    </div>
+                  </div>
+                  <div className="hover:text-coffee-600 text-xl leading-7 cursor-pointer hover:transition-all duration-300 ease-in-out">Health Check: why do I get a headache when I haven’t had my coffee?</div>
+                  <div className="text-gray-500 leading-7">It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</div>
+                  <div className="uppercase text-gray-500 font-semibold text-[12px] tracking-widest">April 27, 2025</div>
+                </div>
+
+                <div className="flex flex-col justify-start gap-4">
+                  <div className="group cursor-pointer relative bg-[url('./assets/LifestyleStories2.jpg')] h-[200px] screen700:h-[300px] w-full bg-cover bg-center flex justify-center items-center hover:bg-gray-900 hover:bg-opacity-10 hover:transitioncleaclea-all hover:ease-in-out hover:duration-300">
+                    <div className="absolute bottom-7 w-[90%] h-[15%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:-translate-y-0 transition-all duration-300 ease-in-out flex">
+                      <div className='text-center'>explore mug</div>
+                    </div>
+                  </div>
+                  <div className="hover:text-coffee-600 text-xl leading-7 cursor-pointer hover:transition-all duration-300 ease-in-out"> How long does a cup of coffee keep you awake?</div>
+                  <div className="text-gray-500 leading-7">It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.</div>
+                  <div className="uppercase text-gray-500 font-semibold text-[12px] tracking-widest">April 27, 2025</div>
+                </div>
+
+                <div className="flex flex-col justify-start gap-4">
+                  <div className="group cursor-pointer relative bg-[url('./assets/LifestyleStories3.jpg')] h-[200px] screen700:h-[300px] w-full bg-cover bg-center flex justify-center items-center hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
+                    <div className="absolute bottom-7 w-[90%] h-[15%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:-translate-y-0 transition-all duration-300 ease-in-out flex">
+                      <div className='text-center'>explore mug</div>
+                    </div>
+                  </div>
+                  <div className="hover:text-coffee-600 text-xl leading-7 cursor-pointer hover:transition-all duration-300 ease-in-out"> Recent research suggests that heavy coffee drinkers may reap health benefits.</div>
+                  <div className="text-gray-500 leading-7">It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</div>
+                  <div className="uppercase text-gray-500 font-semibold text-[12px] tracking-widest">April 27, 2025</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="subscribe-us bg-[#1D1F2E] w-full h-72 flex flex-col items-center justify-center gap-4 screen900:w-[100vw] screen900:left-[calc(-50vw+50%)] screen900:relative mb-20">
+              <div className="flex justify-center items-center">
+                <div className="w-6 h-[0.5px] bg-gray-200 opacity-30"></div>
+                <div className="uppercase mx-2 text-[10px] tracking-wide font-[1000] text-center text-gray-400">Sign up and get free coffee bags</div>
+                <div className="w-6 h-[0.5px] bg-gray-200 opacity-30"></div>
+              </div>
+              <div className="text-white text-center text-2xl">Coffee Updates</div>
+              <div className="flex gap-2 h-[15%] screen783:w-[40%] w-[60%]">
+                <div className="h-full w-[70%] border border-bordercolor-inputSubscribe focus-within:border-gray-400 transition-all duration-300 ease-in-out"><input type="text" placeholder='CUSTOMER@COFFEESTYLE' className='pl-2 w-full h-full bg-[#1D1F2E] text-white text-[10px] tracking-wider font-bold outline-none' /></div>
+                <div className="bg-white uppercase cursor-pointer h-full text-center flex justify-center items-center w-[30%] hover:opacity-90 hover:transition-all duration-300 ease-in-out">
+                  <div className="text-[10px] tracking-widest font-medium">
+                    subscribe
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </main>
 
           <footer className="py-8 text-center bg-slate-300">footer</footer>
