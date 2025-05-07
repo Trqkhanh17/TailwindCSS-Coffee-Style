@@ -30,7 +30,8 @@ export default {
         "screen900":{"max":"900px"},
         "sm790":{"max":"790px"},
         "xl1280":{"max":"1280px"},
-        "screen700":{"max":"700px"}
+        "screen700":{"max":"700px"},
+        "maxScreen850":{"max":"850px"}
       }
     },
   },
