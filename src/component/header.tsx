@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
-
+import { Link } from "react-router-dom";
 const Header = () => {
-    const menuItems = ["Home", "Our Products", "Blog", "Contact", "StyleGuide"];
+    const menuItems = [
+        { label: "Home", to: "/" },
+        { label: "Our Products", to: "/products" },
+        { label: "Blog", to: "/blog" },
+        { label: "Contact", to: "/contact" },
+        { label: "StyleGuide", to: "/styleguide" },
+    ];
 
     const [isMenuOpen, SetIsMenuOpen] = useState(false);
 
@@ -40,7 +46,7 @@ const Header = () => {
                 <ul id="ct-top-menu" className="basis-3/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 uppercase text-sm text-gray-500 font-medium">
                     {menuItems.map((item, index) => (
                         <li className="ct-top-menu-item" key={index}>
-                            <a href="#">{item}</a>
+                            <Link to={item.to}>{item.label}</Link>
                         </li>
                     ))}
                 </ul>
@@ -77,7 +83,7 @@ const Header = () => {
                     >
                         {menuItems.map((item, index) => (
                             <a href="#" key={index} className="ct-top-menu-item">
-                                {item}
+                                {item.label}
                             </a>
                         ))}
                     </div>
