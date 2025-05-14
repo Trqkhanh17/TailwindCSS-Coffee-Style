@@ -15,7 +15,8 @@ export default {
         },
         "bordercolor":{
           "inputSubscribe":"#2f303e"
-        }
+        },
+        "textNav":"#1d1f2e"
       },
       fontFamily:{
         Karla:["Karla", "sans-serif"]
@@ -26,12 +27,14 @@ export default {
       screens:{
         screen783:"783px",
         screen500:"500px",
+        screen375:"375px",
         "screen554":{"max":"545px"},
         "screen900":{"max":"900px"},
         "sm790":{"max":"790px"},
         "xl1280":{"max":"1280px"},
         "screen700":{"max":"700px"},
-        "maxScreen850":{"max":"850px"}
+        "maxScreen850":{"max":"850px"},
+        "maxScreen1220":{"max":"1220px"}
       }
     },
   },

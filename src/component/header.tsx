@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 const Header = () => {
     const menuItems = [
         { label: "Home", to: "/" },
@@ -24,7 +24,7 @@ const Header = () => {
             SetIsMenuOpen(true);
         }
     };
-
+    const navigate = useNavigate();
     const headerRef = useRef<HTMLDivElement | null>(null);
 
     const [headerHeight, setHeaderHeight] = useState(0);
@@ -38,15 +38,22 @@ const Header = () => {
     }, []);
     return (
 
-        <header className="py-6 mx-10" ref={headerRef}>
-            <nav className="flex flex-row justify-between items-center">
-                <div className="logo basis-2/6 text-center text-xl font-semibold cursor-pointer animate-bounce">CoffeeStyle</div>
+        <header className="py-6 w-full mx-auto flex justify-center" ref={headerRef}>
+            <nav className="flex flex-row justify-between items-center w-full">
+                <div className="logo basis-2/6 text-center text-2xl font-semibold text-textNav cursor-pointer animate-bounce" onClick={() => navigate("/")}>CoffeeStyle.</div>
 
                 {/* Desktop menu */}
-                <ul id="ct-top-menu" className="basis-3/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 uppercase text-sm text-gray-500 font-medium">
+                <ul id="ct-top-menu" className="basis-3/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 uppercase text-center text-gray-500 font-medium">
                     {menuItems.map((item, index) => (
-                        <li className="ct-top-menu-item" key={index}>
-                            <Link to={item.to}>{item.label}</Link>
+                        <li key={index}>
+                            <NavLink
+                                to={item.to}
+                                className={({ isActive }) =>
+                                    `ct-top-menu-item ${isActive ? 'text-textNav font-bold' : ''}`
+                                }
+                            >
+                                {item.label}
+                            </NavLink>
                         </li>
                     ))}
                 </ul>
@@ -82,9 +89,18 @@ const Header = () => {
                         style={{ top: `${headerHeight - 21}px` }}
                     >
                         {menuItems.map((item, index) => (
-                            <a href="#" key={index} className="ct-top-menu-item">
-                                {item.label}
-                            </a>
+                            <ul>
+                                <li key={index}>
+                                    <NavLink
+                                        to={item.to}
+                                        className={({ isActive }) =>
+                                            `ct-top-menu-item ${isActive ? 'text-coffee-600 font-bold' : ''}`
+                                        }
+                                    >
+                                        {item.label}
+                                    </NavLink>
+                                </li>
+                            </ul>
                         ))}
                     </div>
                 )
