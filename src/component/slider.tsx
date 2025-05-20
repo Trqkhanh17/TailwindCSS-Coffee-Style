@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 
 
 const Slider = () => {
@@ -9,7 +10,11 @@ const Slider = () => {
                     <div className="font-medium text-5xl mb-6">Coffee Mugs</div>
                     <div className="mb-6 font-medium text-lg">The most versatile furniture syftem ever created. Designed to fit your life, made to move and grow.</div>
                     <div className="flex justify-center items-center">
-                        <div className="uppercase bg-white w-max text-gray-900 tracking-wider py-4 px-6 text-sm font-medium cursor-pointer hover:bg-opacity-95">explore our products</div>
+                        <div className="uppercase bg-white w-max text-gray-900 tracking-wider py-4 px-6 text-sm font-medium cursor-pointer hover:bg-opacity-95">
+                            <NavLink to={"/products"}>
+                                Explore Our Products
+                            </NavLink>
+                        </div>
                     </div>
                 </div>
             </div>

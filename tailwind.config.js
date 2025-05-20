@@ -34,7 +34,8 @@ export default {
         "xl1280":{"max":"1280px"},
         "screen700":{"max":"700px"},
         "maxScreen850":{"max":"850px"},
-        "maxScreen1220":{"max":"1220px"}
+        "maxScreen1220":{"max":"1220px"},
+        "maxScreensm":{"max":"640px"}
       }
     },
   },
