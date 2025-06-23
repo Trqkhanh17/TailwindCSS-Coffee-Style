@@ -4,7 +4,7 @@ const FeaturedMugs = () => {
     return (
         <div className="featured-mugs w-[100%] xl:w-[65%] mx-auto">
             <div className="grid screen783:grid-cols-2 grid-cols-1 gap-4">
-                <div className="ct-product-card">
+                <div className="ct-product-card shadow-md rounded-lg overflow-hidden">
                     <div className={`h-[540px] bg-[url('./assets/featured_mugs_product_cart_2.jpg')] bg-cover bg-no-repeat bg-center`}>
                         <a href="#">
                             <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
@@ -21,7 +21,7 @@ const FeaturedMugs = () => {
                     </div>
                 </div>
 
-                <div className="ct-product-card">
+                <div className="ct-product-card shadow-md rounded-lg overflow-hidden">
                     <div className="h-[540px] bg-[url('./assets/featured_mugs_product_cart_1.jpg')] bg-cover bg-no-repeat bg-center">
                         <a href="#">
                             <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
