@@ -90,8 +90,8 @@ const Header = () => {
                         style={{ top: `${headerHeight - 21}px` }}
                     >
                         {menuItems.map((item, index) => (
-                            <ul>
-                                <li key={index}>
+                            <ul key={index}>
+                                <li>
                                     <NavLink
                                         to={item.to}
                                         className={({ isActive }) =>

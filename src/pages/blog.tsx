@@ -63,6 +63,7 @@ const Blog = () => {
                                 <div className="grid md:grid-cols-2 gap-5 w-full">
                                     <div className="flex flex-col h-full bg-white shadow-md rounded-lg overflow-hidden">
                                         <div className="group cursor-pointer relative bg-[url('./assets/LifestyleStories2.jpg')] h-[300px] lg:h-[400px] bg-cover bg-center flex justify-center items-center">
+                                            <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                                             <div className="absolute bottom-7 w-[90%] h-[15%] bg-white uppercase flex justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out">
                                                 <div className="text-center">explore mug</div>
                                             </div>
@@ -84,6 +85,7 @@ const Blog = () => {
 
                                     <div className="flex flex-col h-full bg-white shadow-md rounded-lg overflow-hidden">
                                         <div className="group cursor-pointer relative bg-[url('./assets/LifestyleStories3.jpg')] h-[300px] lg:h-[400px] bg-cover bg-center flex justify-center items-center">
+                                            <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                                             <div className="absolute bottom-7 w-[90%] h-[15%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">
                                                 <div className="text-center">explore mug</div>
                                             </div>
@@ -121,6 +123,7 @@ const Blog = () => {
                                             backgroundPosition: "center"
                                         }}
                                     >
+                                        <div className="absolute inset-0 bg-gray-900 opacity-0 group-hover:opacity-10 transition-opacity duration-300"></div>
                                         <div className="absolute bottom-7 w-[90%] h-[20%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">
                                             <div className="text-center">explore mug</div>
                                         </div>
@@ -174,7 +177,7 @@ const Blog = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="large-blog-quote flex flex-col gap-10 justify-center items-center xl:w-[80%] w-full md:p-16 mx-auto">
+                    <div className="large-blog-quote flex flex-col gap-10 justify-center items-center xl:w-[80%] w-full md:p-16 mx-auto mb-20 md:mb-0">
                         <div className="text-xl w-full text-center text-coffee-400 p-8 relative after:absolute after:left-0 after:w-0.5 after:h-full after:bottom-0 after:bg-coffee-400 after:opacity-20 before:absolute before:left-0 before:w-full before:bottom-0 before:bg-coffee-400 before:h-0.5 before:opacity-20">"I wake up some mornings and sit and have my coffee and look out at my beautiful garden, and I go, ’Remember how good this is. Because you can lose it."</div>
                         <div className="uppercase text-sm tracking-widest font-medium text-gray-500 opacity-60">Jason Johnson - Owner of CoffeeStyle</div>
                     </div>
