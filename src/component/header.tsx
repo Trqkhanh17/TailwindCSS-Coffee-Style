@@ -26,25 +26,27 @@ const Header = () => {
         }
     };
     const navigate = useNavigate();
-    const headerRef = useRef<HTMLDivElement | null>(null);
 
-    const [headerHeight, setHeaderHeight] = useState(0);
-
-    useEffect(() => {
-
-        if (headerRef.current) {
-            setHeaderHeight(headerRef.current.offsetHeight);
+    const menuRef = useRef<HTMLDivElement>(null);
+    const handleClickOutSide = (event: MouseEvent) => {
+        if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
+            toggleMenu();
         }
-
-    }, []);
+    }
+    useEffect(() => {
+        document.addEventListener("mousedown", handleClickOutSide);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutSide);
+        }
+    }, [isMenuOpen]);
     return (
 
-        <header className="py-6 w-full mx-auto flex justify-center" ref={headerRef}>
+        <header className="relative py-6 w-full mx-auto flex justify-center">
             <nav className="flex flex-row justify-between items-center w-full">
                 <div className="logo basis-2/6 text-center text-2xl font-semibold text-textNav cursor-pointer animate-bounce" onClick={() => navigate("/")}>CoffeeStyle.</div>
 
                 {/* Desktop menu */}
-                <ul id="ct-top-menu" className="basis-3/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 uppercase text-center text-gray-500 font-medium">
+                <ul id="ct-top-menu" className="basis-4/6 hidden lg:flex lg:items-center lg:justify-end lg:gap-8 uppercase text-center text-gray-500 font-medium">
                     {menuItems.map((item, index) => (
                         <li key={index}>
                             <NavLink
@@ -60,7 +62,7 @@ const Header = () => {
                 </ul>
 
                 {/* Cart */}
-                <ul className="group basis-3/6 flex justify-end lg:justify-start items-center ml-16 uppercase text-sm text-gray-500 font-medium hover:text-gray-800">
+                <ul className="group basis-2/6 flex justify-end lg:justify-start items-center ml-16 uppercase text-sm text-gray-500 font-medium hover:text-gray-800">
                     <li className="ct-top-menu-item">
                         <a href="#" className="flex gap-1.5 items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="ct-icon">
@@ -76,18 +78,50 @@ const Header = () => {
 
                 {/* Mobile toggle button */}
                 <div className="basis-1/6 lg:hidden flex items-center cursor-pointer px-2 sm:px-4">
-                    <svg id="ct-toggle-top-menu-icon" onClick={toggleMenu} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="size-6">
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                    </svg>
+                    {isMenuOpen && (
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            onClick={toggleMenu}
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-6"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M6 18 18 6M6 6l12 12"
+                            />
+                        </svg>
+                    )}
+                    {!isMenuOpen && (
+                        <svg
+                            onClick={toggleMenu}
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="currentColor"
+                            className="size-6"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                            />
+                        </svg>
+                    )}
                 </div>
+
             </nav>
             {/* Mobile menu overlay */}
             {
                 (isMenuOpen || isClosing) && (
                     <div
-                        className={`absolute lg:hidden left-0 w-full bg-white z-50 flex flex-col items-center gap-6 uppercase text-sm text-gray-700 font-medium ${isClosing ? 'animate-slide-up' : 'animate-slide-down'
+                        ref={menuRef}
+                        className={`absolute pb-2 top-full lg:hidden left-0 w-full bg-white z-50 flex flex-col items-center gap-6 uppercase text-sm text-gray-700 font-medium ${isClosing ? 'animate-slide-up' : 'animate-slide-down'
                             }`}
-                        style={{ top: `${headerHeight - 21}px` }}
                     >
                         {menuItems.map((item, index) => (
                             <ul key={index}>
