@@ -2,7 +2,9 @@ import { Route, Routes } from "react-router-dom";
 import { lazy, Suspense } from 'react';
 import Blog from "./pages/blog";
 import About from "./pages/about";
-const Loading = lazy(() => import("./component/loading"))
+import Contact from "./pages/contact";
+import Loading from "./component/loading";
+import { NotFound } from "./pages/not_found";
 const Home = lazy(() => import("./pages/home"));
 const OurProducts = lazy(() => import("./pages/our_products"));
 
@@ -14,6 +16,8 @@ function App() {
         <Route path="/products" element={<OurProducts />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Suspense>
   );

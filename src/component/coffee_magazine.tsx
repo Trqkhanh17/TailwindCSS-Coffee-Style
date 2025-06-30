@@ -2,7 +2,7 @@
 
 const CoffeeMagazine = () => {
     return (
-        <div className="coffee-magazine w-[100%] xl:w-[65%] mx-auto mb-40 shadow-md rounded-lg overflow-hidden">
+        <div className="coffee-magazine w-[100%] xl:w-[65%] mx-auto mb-40 shadow-md rounded-lg overflow-hidden pb-10 screen790:pb-0">
             <div className="flex sm790:flex-col flex-row justify-center h-[300px] sm790:h-auto gap-3 sm790:gap-20 items-center">
                 <div className="w-[50%] sm790:w-full flex flex-col justify-start gap-5 sm790:text-center sm790:justify-center sm790:items-center sm790:order-2">
                     <div className="w-full text-gray-600 font-bold uppercase text-sm pl-10 sm790:pl-0">Premium Offer</div>

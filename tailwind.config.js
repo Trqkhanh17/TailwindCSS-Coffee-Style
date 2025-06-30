@@ -29,6 +29,7 @@ export default {
         screen500:"500px",
         screen375:"375px",
         screen700:"700px",
+        screen790:"790",
         "screen554":{"max":"545px"},
         "screen900":{"max":"900px"},
         "sm790":{"max":"790px"},
