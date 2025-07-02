@@ -3,7 +3,11 @@ import Subheadline from "../component/subheadline";
 import { motion } from "framer-motion";
 import Footer from "../component/footer";
 import SubscribeUS from "../component/subscribeUS";
-
+import imgOwen from "../assets/OwnImg.jpg"
+import imgMugDesigner1 from "../assets/MugDesigner1.jpg"
+import imgMugDesigner2 from "../assets/MugDesigner2.jpg"
+import imgParallax from "../assets/about_parallax.jpg"
+import Parallax from "../component/parallax";
 const About = () => {
     interface timeLineItem {
         monthAndYear: string,
@@ -40,7 +44,7 @@ const About = () => {
 
     return (
         <>
-            <div className="content-wrapper font-Karla max-w-[1536px] text-base mx-auto px-8">
+            <div className="content-wrapper font-Karla max-w-[1536px] text-base mx-auto px-8 mb-24">
                 <Header />
                 <div className="flex flex-col w-full justify-center items-center mx-auto">
                     <div className="bg-gray-100 h-[600px] w-full relative flex flex-col justify-center items-center">
@@ -106,15 +110,13 @@ const About = () => {
                         className="w-full"
                     >
                         <div className="w-full flex flex-col lg:flex-row gap-10 justify-center items-center">
-                            {/* Cards */}
-                            {/* Lặp lại 3 card */}
                             {[
-                                { name: "Fred Gleason", title: "Brand Owner", img: "./assets/OwnImg.jpg" },
-                                { name: "Isabel Hamill", title: "Mug Designer", img: "./assets/MugDesigner1.jpg" },
-                                { name: "Maurice Herman", title: "Mug Designer", img: "./assets/MugDesigner2.jpg" }
+                                { name: "Fred Gleason", title: "Brand Owner", img: imgOwen },
+                                { name: "Isabel Hamill", title: "Mug Designer", img: imgMugDesigner1 },
+                                { name: "Maurice Herman", title: "Mug Designer", img: imgMugDesigner2 }
                             ].map((item, i) => (
                                 <div key={i} className="w-full sm:w-96 flex flex-col justify-center items-center gap-10 shadow-md rounded-lg overflow-hidden">
-                                    <div className={`bg-[url('${item.img}')] h-[400px] w-full bg-cover bg-center`}></div>
+                                    <div className="h-[400px] w-full bg-cover bg-center" style={{ backgroundImage: `url(${item.img})` }}></div>
                                     <div className="flex flex-col justify-center items-center">
                                         <div className="text-2xl">{item.name}</div>
                                         <div className="uppercase text-sm text-gray-700 tracking-widest font-medium opacity-80">{item.title}</div>
@@ -126,7 +128,7 @@ const About = () => {
                 </div>
             </div>
 
-            <div className="mt-24 bg-[url('./assets/about_img3.jpg')] bg-cover bg-center w-full h-[350px] bg-fixed"></div>
+            <Parallax img={imgParallax} />
 
             <div className="content-wrapper font-Karla max-w-[1536px] text-base mx-auto px-8">
                 <div className="flex flex-col w-full justify-center items-center mx-auto">

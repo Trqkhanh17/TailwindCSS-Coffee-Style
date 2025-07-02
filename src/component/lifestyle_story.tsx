@@ -42,13 +42,13 @@ const LifeStyle = () => {
                                 <div className='text-center'>explore mug</div>
                             </div>
                         </div>
-                        <div className="hover:text-coffee-600 text-xl leading-7 cursor-pointer hover:transition-all duration-300 ease-in-out">
+                        <div className="hover:text-coffee-600 text-xl leading-7 cursor-pointer hover:transition-all duration-300 ease-in-out lg:pl-1">
                             {story.title}
                         </div>
-                        <div className="text-gray-500 leading-7">
+                        <div className="text-gray-500 leading-7 lg:pl-1">
                             {story.description}
                         </div>
-                        <div className="uppercase text-gray-500 font-semibold text-[12px] tracking-widest">
+                        <div className="uppercase text-gray-500 font-semibold text-[12px] tracking-widest lg:pl-1">
                             {story.date}
                         </div>
                     </div>
