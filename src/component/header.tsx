@@ -170,6 +170,7 @@ const Header = () => {
                     </div>
 
                     <div className="fixed inset-0 bg-black/50 z-40"></div>
+                    <div className="hidden" onClick={handleAddToCart}></div>
                 </>
             )}
         </>
