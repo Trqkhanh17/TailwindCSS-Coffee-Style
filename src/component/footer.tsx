@@ -4,8 +4,8 @@ const Footer = () => {
         { label: "Home", to: "/" },
         { label: "Our Products", to: "/products" },
         { label: "Blog", to: "/blog" },
+        { label: "About", to: "/about" },
         { label: "Contact", to: "/contact" },
-        { label: "StyleGuide", to: "/styleguide" },
     ];
     const followMeItems = [
         {

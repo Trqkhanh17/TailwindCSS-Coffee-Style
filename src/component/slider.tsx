@@ -1,6 +1,5 @@
 import { NavLink } from "react-router-dom";
 
-
 const Slider = () => {
     return (
         <div className="slide h-[530px] bg-[url('./assets/slider-bg.jpg')] bg-cover bg-no-repeat bg-bottom">

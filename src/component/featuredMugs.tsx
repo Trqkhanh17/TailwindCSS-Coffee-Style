@@ -1,11 +1,16 @@
 
+export type imgFeatureMug = string;
+interface ListimgFeatureMug {
+    ListImg: imgFeatureMug[]
+}
+const FeaturedMugs = (probs: ListimgFeatureMug) => {
+    const { ListImg } = probs
 
-const FeaturedMugs = () => {
     return (
         <div className="featured-mugs w-[100%] xl:w-[65%] mx-auto">
             <div className="grid screen783:grid-cols-2 grid-cols-1 gap-4">
                 <div className="ct-product-card shadow-md rounded-lg overflow-hidden">
-                    <div className={`h-[540px] bg-[url('./assets/featured_mugs_product_cart_2.jpg')] bg-cover bg-no-repeat bg-center`}>
+                    <div className={`h-[540px] bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: `url(${ListImg[0]})` }}>
                         <a href="#">
                             <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
                                 <div className="absolute bottom-7 w-[90%] h-[10%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">
@@ -22,7 +27,7 @@ const FeaturedMugs = () => {
                 </div>
 
                 <div className="ct-product-card shadow-md rounded-lg overflow-hidden">
-                    <div className="h-[540px] bg-[url('./assets/featured_mugs_product_cart_1.jpg')] bg-cover bg-no-repeat bg-center">
+                    <div className="h-[540px] bg-cover bg-no-repeat bg-center" style={{ backgroundImage: `url(${ListImg[1]})` }}>
                         <a href="#">
                             <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">
                                 <div className="absolute bottom-7 w-[90%] h-[10%] bg-white uppercase justify-center items-center opacity-0 translate-y-6 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-300 ease-in-out flex">

@@ -5,10 +5,10 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import Subheadline from "../component/subheadline";
 import SubscribeUS from "../component/subscribeUS";
 import { motion, AnimatePresence } from "framer-motion"
-import React, { useState } from "react";
+import { useState } from "react";
 import Footer from "../component/footer";
 
-const Contact: React.FC = () => {
+const Contact = () => {
     interface officeWrapItem {
         img: string,
         label1: string,
