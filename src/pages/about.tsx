@@ -15,6 +15,16 @@ const About = () => {
         label1: string,
         label2: string | null
     }
+    interface memberItem {
+        name: string,
+        title: string,
+        img: string
+    }
+    const member: memberItem[] = [
+        { name: "Fred Gleason", title: "Brand Owner", img: imgOwen },
+        { name: "Isabel Hamill", title: "Mug Designer", img: imgMugDesigner1 },
+        { name: "Maurice Herman", title: "Mug Designer", img: imgMugDesigner2 }
+    ]
     const timeLine: timeLineItem[] = [
         {
             monthAndYear: "october 2018",
@@ -102,29 +112,31 @@ const About = () => {
                         <Subheadline title="Introductions" />
                     </motion.div>
 
-                    <motion.div
-                        initial={{ x: -100, opacity: 0 }}
-                        whileInView={{ x: 0, opacity: 1 }}
-                        viewport={{ once: true, amount: 0.3 }}
-                        transition={{ duration: 1, ease: "easeInOut" }}
-                        className="w-full"
-                    >
-                        <div className="w-full flex flex-col lg:flex-row gap-10 justify-center items-center">
-                            {[
-                                { name: "Fred Gleason", title: "Brand Owner", img: imgOwen },
-                                { name: "Isabel Hamill", title: "Mug Designer", img: imgMugDesigner1 },
-                                { name: "Maurice Herman", title: "Mug Designer", img: imgMugDesigner2 }
-                            ].map((item, i) => (
-                                <div key={i} className="w-full sm:w-96 flex flex-col justify-center items-center gap-10 shadow-md rounded-lg overflow-hidden">
+
+                    <div className="w-full flex flex-col lg:flex-row gap-10 justify-center items-center">
+
+                        {member.map((item, i) => (
+                            <motion.div
+                                initial={{ x: -100, opacity: 0 }}
+                                whileInView={{ x: 0, opacity: 1 }}
+                                viewport={{ once: true, amount: 0.3 }}
+                                transition={{ duration: 1, ease: "easeInOut" }}
+                                className="w-full"
+                                key={i}
+                            >
+                                <div className="w-full sm:w-96 flex flex-col justify-center items-center gap-10 shadow-md rounded-lg overflow-hidden">
                                     <div className="h-[400px] w-full bg-cover bg-center" style={{ backgroundImage: `url(${item.img})` }}></div>
                                     <div className="flex flex-col justify-center items-center">
                                         <div className="text-2xl">{item.name}</div>
                                         <div className="uppercase text-sm text-gray-700 tracking-widest font-medium opacity-80">{item.title}</div>
                                     </div>
                                 </div>
-                            ))}
-                        </div>
-                    </motion.div>
+                            </motion.div>
+                        ))}
+
+                    </div>
+
+
                 </div>
             </div>
 

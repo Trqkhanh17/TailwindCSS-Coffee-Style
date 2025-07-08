@@ -1,22 +1,31 @@
+import { useNavigate } from "react-router-dom";
 
 export interface productItem {
     id: number,
     src: string,
     name: string,
     price: number,
-    sale: null | number
+    sale: null | number,
+    description: string,
+    detail: string,
+    dimensions: {
+        lenghtIn: number,
+        heghtIn: number,
+        widthIn: number,
+        weightOz: number
+    }
 }
 interface MoreProductProbs {
     products: productItem[]
 }
 const MoreProduct = (probs: MoreProductProbs) => {
     const { products } = probs;
-
+    const navigate = useNavigate();
     return (
         <div className="more-product w-[100%] xl:w-[65%] mx-auto">
             <div className="grid screen783:grid-cols-3 grid-cols-1 gap-4 gap-y-10">
                 {products.map((item) => (
-                    <div className="ct-product-card shadow-md rounded-lg overflow-hidden" key={item.id}>
+                    <div className="ct-product-card shadow-md rounded-lg overflow-hidden" key={item.id} onClick={() => navigate(`/products/${item.id}`)}>
                         <div className={`h-[400px] bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: `url(${item.src})` }}>
                             <a href="#">
                                 <div className="group flex justify-center items-center relative w-full h-full hover:bg-gray-900 hover:bg-opacity-10 hover:transition-all hover:ease-in-out hover:duration-300">

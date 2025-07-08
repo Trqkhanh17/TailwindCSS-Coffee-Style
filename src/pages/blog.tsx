@@ -5,6 +5,7 @@ import imgLatestPosts2 from "../assets/LifestyleStories2.jpg"
 import imgLatestPosts3 from "../assets/LifestyleStories3.jpg";
 import imgLatestPosts4 from "../assets/LifestyleStories4.jpg";
 import imgLatestPosts5 from "../assets/LifestyleStories5.jpg";
+import myAvt from "../assets/myavt.jpg"
 import { NavLink } from "react-router-dom";
 import SubscribeUS from "../component/subscribeUS";
 import Footer from "../component/footer";
@@ -170,7 +171,7 @@ const Blog = () => {
                                 <div className="flex flex-col my-6 w-full gap-10">
                                     <div className="text-2xl w-full relative after:absolute after:left-0 after:bg-gray-100 after:w-full after:h-0.5 after:-bottom-4 text-center md:text-start">Authors</div>
                                     <div className="w-full p-4 flex justify-start items-center gap-3 h-[80px] hover:bg-coffee-50 hover:bg-opacity-20 relative after:absolute after:left-0 after:w-0.5 after:h-full after:bottom-0 after:bg-coffee-400 after:opacity-20 hover:after:opacity-60 cursor-pointer hover:after::transition-all hover:after:ease-in-out hover:after:duration-700 hover:transition-all ease-in-out duration-700">
-                                        <div className="bg-[url(src/assets/myavt.jpg)] h-14 w-14 bg-cover bg-center"></div>
+                                        <div className="h-14 w-14 bg-cover bg-center" style={{ backgroundImage: `url(${myAvt})` }}></div>
                                         <div className="text-md text-gray-600 w-[50%]">Tran Quoc Khanh</div>
                                     </div>
                                 </div>
