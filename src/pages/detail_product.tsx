@@ -10,7 +10,7 @@ import iConDiamond from "../assets/diamond.png";
 import iConLight from "../assets/light.png"
 import Subheadline from "../component/subheadline";
 import { useCart } from "../store/cartContext";
-import Cart from "../component/cart";
+
 type FormValues = {
     quantity: number;
 }
@@ -39,7 +39,6 @@ const DetailProduct = () => {
             quantity: data.quantity
         }
         addToCart(cartItem);
-        console.log("Data:", Cart);
     };
 
     const getRandomProductSuggestions = (allProdut: productItem[], Id: number) => {
