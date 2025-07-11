@@ -11,7 +11,10 @@ import { productItem } from '../component/moreProduct'
 import imgFeatureMug1 from "../assets/featured_mugs_product_cart_1.jpg"
 import imgFeatureMug2 from "../assets/featured_mugs_product_cart_2.jpg"
 import { imgFeatureMug } from '../component/featuredMugs'
-
+import img1 from "../assets/LifestyleStories1.jpg"
+import img2 from "../assets/LifestyleStories2.jpg"
+import img3 from "../assets/LifestyleStories3.jpg"
+import { storiesItem } from '../component/lifestyle_story';
 export const dataHomeProducts: productItem[] = [
     {
         id: 1,
@@ -109,3 +112,24 @@ export const dataImgFeatureMug: imgFeatureMug[] = [
         imgFeatureMug1,
         imgFeatureMug2
     ]
+       
+export const dataStories: storiesItem[] = [
+        {
+            image: img1,
+            title: "Health Check: why do I get a headache when I haven’t had my coffee?",
+            description: "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+            date: "April 27, 2025",
+        },
+        {
+            image: img2,
+            title: "How long does a cup of coffee keep you awake?",
+            description: "It is a paradisematic country, in which roasted parts. Vel qui et ad voluptatem.",
+            date: "April 27, 2025",
+        },
+        {
+            image: img3,
+            title: "Recent research suggests that heavy coffee drinkers may reap health benefits.",
+            description: "It is a paradisematic country, in which roasted parts of sentences fly into your mouth.",
+            date: "April 27, 2025",
+        }
+    ];

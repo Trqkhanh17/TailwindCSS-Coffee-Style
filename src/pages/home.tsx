@@ -10,7 +10,7 @@ import Story from "../component/story";
 import Subheadline from "../component/subheadline";
 import SubscribeUS from "../component/subscribeUS";
 import Imgparallax from "../assets/home_parallax.jpg";
-import { dataHomeProducts, dataImgFeatureMug } from "../data/data.home"
+import { dataHomeProducts, dataImgFeatureMug, dataStories } from "../data/data.home"
 
 const Home = () => {
     return (
@@ -29,7 +29,7 @@ const Home = () => {
             <Parallax img={Imgparallax} />
             <div className="content-wrapper font-Karla max-w-[1536px] text-base mx-auto px-8">
                 <Subheadline title={"Behind the mugs, lifestyle stories"} />
-                <LifeStyle />
+                <LifeStyle dataStory={dataStories} />
                 <SubscribeUS />
                 <Footer />
             </div >
