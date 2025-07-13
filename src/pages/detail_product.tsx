@@ -4,7 +4,7 @@ import { productItems } from "../data/data.ourproducts";
 import SubscribeUS from "../component/subscribeUS";
 import Footer from "../component/footer";
 import { useForm } from "react-hook-form";
-import MoreProduct, { productItem } from "../component/moreProduct";
+import ListProduct, { productItem } from "../component/list_product";
 import ImgPremium from "../assets/detail_product_img.jpg"
 import iConDiamond from "../assets/diamond.png";
 import iConLight from "../assets/light.png"
@@ -136,7 +136,7 @@ const DetailProduct = () => {
             </div>
             <div className="content-wrapper font-Karla max-w-[1536px] text-base mx-auto px-8">
                 <Subheadline title="You might also like these" />
-                <div className="mb-20"><MoreProduct products={getRandomProductSuggestions(productItems, productId)} /></div>
+                <div className="mb-20"><ListProduct products={getRandomProductSuggestions(productItems, productId)} /></div>
                 <SubscribeUS />
                 <Footer />
             </div>

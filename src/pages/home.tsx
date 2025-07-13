@@ -1,16 +1,16 @@
-import CoffeeMagazine from "../component/coffee_magazine"
-import FeaturedMugs from "../component/featuredMugs"
+import CoffeeMagazine from "../component/homeComponent/coffee_magazine"
+import FeaturedMugs from "../component/homeComponent/featuredMugs"
 import Footer from "../component/footer";
 import Header from "../component/header";
-import LifeStyle from "../component/lifestyle_story";
-import MoreProduct from "../component/moreProduct";
+import LifeStyle from "../component/homeComponent/lifestyle_story";
 import Parallax from "../component/parallax";
-import Slider from "../component/slider";
-import Story from "../component/story";
+import Slider from "../component/homeComponent/slider";
+import Story from "../component/homeComponent/story";
 import Subheadline from "../component/subheadline";
 import SubscribeUS from "../component/subscribeUS";
 import Imgparallax from "../assets/home_parallax.jpg";
 import { dataHomeProducts, dataImgFeatureMug, dataStories } from "../data/data.home"
+import ListProduct from "../component/list_product";
 
 const Home = () => {
     return (
@@ -22,7 +22,7 @@ const Home = () => {
                 <Subheadline title={"Featured Mugs"} />
                 <FeaturedMugs ListImg={dataImgFeatureMug} />
                 <Subheadline title={"more products"} />
-                <MoreProduct products={dataHomeProducts} />
+                <ListProduct products={dataHomeProducts} />
                 <Subheadline title={"Buy 2 mugs and get a coffee magazine free"} />
                 <CoffeeMagazine />
             </div>

@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
-import Img1 from "../assets/coffee_magazine1.jpg";
-import Img2 from "../assets/coffee_magazine2.jpg";
-import Img3 from "../assets/coffee_magazine3.jpg";
+import Img1 from "../../assets/coffee_magazine1.jpg";
+import Img2 from "../../assets/coffee_magazine2.jpg";
+import Img3 from "../../assets/coffee_magazine3.jpg";
 type MagazineImageItem = string;
 
 const CoffeeMagazine = () => {
