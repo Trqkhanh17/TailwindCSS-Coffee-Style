@@ -15,7 +15,7 @@ import product12 from '../assets/more_product_12.jpg';
 import product13 from '../assets/more_product_13.jpg';
 import product14 from '../assets/more_product_14.jpg';
 import product15 from '../assets/more_product_15.jpg';
-import { productItem } from "../component/moreProduct";
+import { productItem } from "../component/list_product";
 
 type sliderItemsType = {
         image: string,

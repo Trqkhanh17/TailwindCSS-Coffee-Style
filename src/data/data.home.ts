@@ -7,14 +7,14 @@ import product6 from '../assets/more_product_6.jpg';
 import product7 from '../assets/more_product_7.jpg';
 import product8 from '../assets/more_product_8.jpg';
 import product9 from '../assets/more_product_9.jpg';
-import { productItem } from '../component/moreProduct'
+import { productItem } from '../component/list_product'
 import imgFeatureMug1 from "../assets/featured_mugs_product_cart_1.jpg"
 import imgFeatureMug2 from "../assets/featured_mugs_product_cart_2.jpg"
-import { imgFeatureMug } from '../component/featuredMugs'
+import { imgFeatureMug } from '../component/homeComponent/featuredMugs'
 import img1 from "../assets/LifestyleStories1.jpg"
 import img2 from "../assets/LifestyleStories2.jpg"
 import img3 from "../assets/LifestyleStories3.jpg"
-import { storiesItem } from '../component/lifestyle_story';
+import { storiesItem } from '../component/homeComponent/lifestyle_story';
 export const dataHomeProducts: productItem[] = [
     {
         id: 1,
