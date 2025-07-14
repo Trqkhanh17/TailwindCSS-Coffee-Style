@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 export interface storiesItem {
     image: string,
     title: string,
@@ -10,7 +11,13 @@ interface dataStories {
 const LifeStyle = (probs: dataStories) => {
     const { dataStory } = probs
     return (
-        <div className="lifestyle-story xl:w-[65%] mx-auto mb-20 w-full">
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="lifestyle-story xl:w-[65%] mx-auto mb-20 w-full"
+        >
             <div className="grid lg:grid-cols-3 gap-5 xl:mx-auto w-full">
                 {dataStory.map((story, index) => (
                     <div key={index} className="flex flex-col justify-center items-center lg:justify-start lg:items-start text-center lg:text-start gap-4 shadow-md rounded-lg overflow-hidden">
@@ -34,7 +41,8 @@ const LifeStyle = (probs: dataStories) => {
                     </div>
                 ))}
             </div>
-        </div>
+        </motion.div>
+
     );
 };
 

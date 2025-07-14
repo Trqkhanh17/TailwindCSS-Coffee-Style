@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-
+import { motion } from "framer-motion";
 export type imgFeatureMug = string;
 interface ListimgFeatureMug {
     ListImg: imgFeatureMug[]
@@ -8,7 +8,13 @@ const FeaturedMugs = (probs: ListimgFeatureMug) => {
     const { ListImg } = probs
     const navigate = useNavigate();
     return (
-        <div className="featured-mugs w-[100%] xl:w-[65%] mx-auto">
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="featured-mugs w-[100%] xl:w-[65%] mx-auto"
+        >
             <div className="grid screen783:grid-cols-2 grid-cols-1 gap-4">
                 <div className="ct-product-card shadow-md rounded-lg overflow-hidden" onClick={() => navigate("/products/8")}>
                     <div className={`h-[540px] bg-cover bg-no-repeat bg-center`} style={{ backgroundImage: `url(${ListImg[1]})` }}>
@@ -48,7 +54,8 @@ const FeaturedMugs = (probs: ListimgFeatureMug) => {
                 </div>
 
             </div>
-        </div>
+        </motion.div>
+
     )
 }
 export default FeaturedMugs;

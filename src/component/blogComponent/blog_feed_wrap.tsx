@@ -3,7 +3,7 @@ import { ListCategories, ListLatestPosts } from "../../data/data.blog";
 import myAvt from "../../assets/myavt.jpg"
 const BlogFeedWrap = () => {
     return (
-        <div className="flex flex-col md:flex-row gap-10 justify-center xl:w-[80%] w-full mt-[1100px] sm:mt-[900px] md:mt-[700px] md:mb-[150px]">
+        <div className="flex flex-col md:flex-row gap-10 justify-center xl:w-[80%] w-full mt-[1100px] sm:mt-[900px] md:mt-[700px] md:mb-[100px]">
             <div className="flex flex-col justify-center items-center md:justify-start md:items-start w-full md:w-[70%] gap-10">
                 <div className="text-3xl w-full relative after:absolute after:left-0 after:bg-gray-100 after:w-full after:h-0.5 after:-bottom-4 text-center md:text-start">Latest Posts</div>
                 {ListLatestPosts.map((item, index) => (
