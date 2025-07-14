@@ -25,14 +25,10 @@ const ProductListSection = (prob: ProductListSectionProb) => {
                     </div>
                 </>
             )}
-
             {activeMenu?.id === menu[1].id && (
-                <>
-                    <ProductsSlider />
-                    <div className="py-32">
-                        <ListProduct products={getProductsByIds(coffeeMugsIds)} />
-                    </div>
-                </>
+                <div className="py-32">
+                    <ListProduct products={getProductsByIds(coffeeMugsIds)} />
+                </div>
             )}
             {activeMenu?.id === menu[2].id && (
                 <div className="py-32">

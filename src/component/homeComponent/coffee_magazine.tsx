@@ -2,13 +2,20 @@ import { useNavigate } from "react-router-dom";
 import Img1 from "../../assets/coffee_magazine1.jpg";
 import Img2 from "../../assets/coffee_magazine2.jpg";
 import Img3 from "../../assets/coffee_magazine3.jpg";
+import { motion } from "framer-motion";
 type MagazineImageItem = string;
 
 const CoffeeMagazine = () => {
     const ListMagazineImage: MagazineImageItem[] = [Img1, Img2, Img3];
     const navigate = useNavigate();
     return (
-        <div className="coffee-magazine w-[100%] xl:w-[65%] mx-auto mb-40 shadow-md rounded-lg overflow-hidden pb-10 screen790:pb-0">
+        <motion.div
+            initial={{ y: 100, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            className="coffee-magazine w-[100%] xl:w-[65%] mx-auto mb-40 shadow-md rounded-lg overflow-hidden pb-10 screen790:pb-0"
+        >
             <div className="flex sm790:flex-col flex-row justify-center h-[300px] sm790:h-auto gap-3 sm790:gap-20 items-center">
                 <div className="w-[50%] sm790:w-full flex flex-col justify-start gap-5 sm790:text-center sm790:justify-center sm790:items-center sm790:order-2">
                     <div className="w-full text-gray-600 font-bold uppercase text-sm pl-10 sm790:pl-0">Premium Offer</div>
@@ -26,7 +33,7 @@ const CoffeeMagazine = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 export default CoffeeMagazine;
