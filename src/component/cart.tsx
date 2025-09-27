@@ -2,18 +2,18 @@ import { useEffect, useRef, useState } from "react";
 import emptyCartIcon from "../assets/emptyCart.png"
 import { useCart } from "../store/cartContext";
 import { motion, AnimatePresence } from "framer-motion";
-interface CartProps {
-    isOpenCart: boolean;
-    setOpenCart: (open: boolean) => void;
-}
+// interface CartProps {
+//     isOpenCart: boolean;
+//     setOpenCart: (open: boolean) => void;
+// }
 
-const Cart = ({ isOpenCart, setOpenCart }: CartProps) => {
-    const [isOnclickCheckOut, SetisOnclickCheckOut] = useState(false)
+const Cart = () => {
+    const [isOnclickCheckOut, SetIsOnclickCheckOut] = useState(false)
     const cartRef = useRef<HTMLDivElement>(null);
-    const { cart, removeCart } = useCart();
+    const { cart, removeCart, openCart, isOpenCart, closeCart } = useCart();
     const handleClickOutSideCart = (event: MouseEvent) => {
         if (cartRef.current && !cartRef.current.contains(event.target as Node)) {
-            setOpenCart(false);
+            openCart;
         }
     }
     const Subtotal = () => {
@@ -44,7 +44,7 @@ const Cart = ({ isOpenCart, setOpenCart }: CartProps) => {
 
                         <div className="p-5 flex justify-between items-center border-b shrink-0">
                             <h2 className="text-gray-400 text-sm font-bold uppercase tracking-widest">Your Cart</h2>
-                            <button onClick={() => setOpenCart(false)} className="text-white text-2xl">
+                            <button onClick={closeCart} className="text-white text-2xl">
                                 &times;
                             </button>
                         </div>
@@ -85,7 +85,7 @@ const Cart = ({ isOpenCart, setOpenCart }: CartProps) => {
                                     </div>
                                     <div
                                         className="py-4 cursor-pointer uppercase w-full text-center text-gray-900 bg-white text-sm font-bold tracking-widest"
-                                        onClick={() => SetisOnclickCheckOut(true)}
+                                        onClick={() => SetIsOnclickCheckOut(true)}
                                     >
                                         Continue to Checkout
                                     </div>
@@ -99,7 +99,7 @@ const Cart = ({ isOpenCart, setOpenCart }: CartProps) => {
                             </>
                         )}
                     </motion.div>
-                    <div className="fixed inset-0 bg-black/50 z-40" onClick={() => setOpenCart(false)}></div>
+                    <div className="fixed inset-0 bg-black/50 z-40" onClick={closeCart}></div>
                 </>
             )}
         </AnimatePresence>

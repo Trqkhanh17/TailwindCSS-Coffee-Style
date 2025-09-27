@@ -13,9 +13,8 @@ const Header = () => {
     ];
 
     const [isMenuOpen, SetIsMenuOpen] = useState(false);
-
+    const { cart, openCart } = useCart();
     const [isClosing, SetIsClosing] = useState(false);
-    const [isOpenCart, SetISOpenCart] = useState(false);
     const toggleMenu = () => {
         if (isMenuOpen) {
             SetIsClosing(true);
@@ -30,7 +29,6 @@ const Header = () => {
     const navigate = useNavigate();
 
     const menuRef = useRef<HTMLDivElement>(null);
-    const { cart } = useCart()
 
     const handleClickOutSideMenu = (event: MouseEvent) => {
         if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
@@ -67,7 +65,7 @@ const Header = () => {
                 </ul>
 
                 {/* Cart */}
-                <ul onClick={() => SetISOpenCart(true)} className="group flex justify-end lg:justify-start items-center uppercase text-sm text-gray-500 font-medium hover:text-gray-800">
+                <ul onClick={openCart} className="group flex justify-end lg:justify-start items-center uppercase text-sm text-gray-500 font-medium hover:text-gray-800">
                     <li className="ct-top-menu-item">
                         <div className="flex gap-1.5 items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="ct-icon">
@@ -80,10 +78,7 @@ const Header = () => {
                         </div>
                     </li>
                 </ul>
-                <Cart
-                    isOpenCart={isOpenCart}
-                    setOpenCart={SetISOpenCart}
-                />
+                <Cart />
 
                 {/* Mobile toggle button */}
                 <div className="lg:hidden flex items-center cursor-pointer px-2 sm:px-4">

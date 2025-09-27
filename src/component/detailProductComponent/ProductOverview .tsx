@@ -14,7 +14,7 @@ const ProductOverview = (prob: productProb) => {
         defaultValues: { quantity: 1 }
     });
 
-    const { addToCart } = useCart();
+    const { addToCart, openCart } = useCart();
 
     const onSubmit = (data: FormValues) => {
         const cartData = {
@@ -28,6 +28,7 @@ const ProductOverview = (prob: productProb) => {
             quantity: data.quantity
         }
         addToCart(cartItem);
+        openCart();
     };
     return (
         <div className="w-full flex flex-col lg:flex-row justify-center items-center my-20 mx-auto gap-20 lg:w-[80%] xl:w-[65%]">
